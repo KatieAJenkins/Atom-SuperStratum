@@ -1,0 +1,6 @@
+<div [ngStyle]="elementStyle" class="element" [id]="elementData.atomicNumber" (mouseenter) = "onHover()">
+    <!--sets div id = to atomicNumber of element-->
+    <!--(mouseenter) triggers onHover fxn when-->
+    <div class="atomicNumber">{{ elementData.atomicNumber }}</div>
+    <div class="symbol">{{ elementData.symbol }}</div>
+</div>

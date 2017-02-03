@@ -1,0 +1,35 @@
+button {
+  font-size: 1.5vw;
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  transition-duration: .2s;
+  width: 100%;
+  font-family: arial;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 28px;
+  color: rgba(255, 255, 255, 0.87);
+  /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
+}
+
+button:hover {
+  /*background-color: red;*/
+  background-color: #CFD8DC;
+  color: #212121;
+  /*box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
+}
+
+button:focus {
+  outline: none;
+}
+
+.highlighted-button {
+  background-color: #CFD8DC;
+  color: #212121
+}
+
+.main-group {
+  font-weight: bold;
+  padding-left: 10px;
+}

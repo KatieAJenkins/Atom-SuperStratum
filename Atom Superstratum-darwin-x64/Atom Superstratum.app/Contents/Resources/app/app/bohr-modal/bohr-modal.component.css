@@ -1,0 +1,92 @@
+.bohrmodal {
+    height: 80vh;
+    width: 75vw;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2%;
+    background-color: #212121;
+    overflow: hidden;
+    animation-name: bottomToMiddle;
+    animation-duration: 0.4s;
+}
+
+@keyframes bottomToMiddle {
+    from {
+        top: 150%;
+    }
+    to {
+        top: 50%;
+    }
+}
+
+#info-left {
+    height: 100%;
+    width: 40%;
+    float: left;
+    border-radius: 2%;
+}
+
+#model-right {
+    height: 100%;
+    width: 60%;
+    float: right;
+    border-radius: 2%;
+    position: relative;
+}
+
+#bohr-model-container {
+    height: 60vh;
+    width: 55vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(10,30,40, .8);
+}
+
+#closeButton {
+    height: 20px;
+    width: 20px;
+    background-color: #212121;
+    color: white;
+    float: right;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#elementSymbol {
+    font-size: 8vw;
+    padding-top: 6%;
+    padding-left: 8%;
+    color: lightgrey;
+}
+
+#elementName {
+    font-size: 3vw;
+    padding-left: 8%;
+    padding-bottom: 2%;
+    color: lightgrey;
+
+}
+
+#wikiSummary {
+    height: 50vh;
+    width: 100%;
+    background: lightgray;
+    overflow: scroll;
+    margin-left: 8%;
+    border-radius: 5px;
+    padding: 10px;
+}

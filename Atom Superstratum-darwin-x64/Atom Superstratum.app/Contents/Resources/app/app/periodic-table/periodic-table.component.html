@@ -1,0 +1,225 @@
+<bohr-modal [showBohrModal]="showModal" (notify)="onNotify($event)">
+   
+</bohr-modal>
+<section class = "container-periodicTable-flex">
+<section class="pt-filter">
+    <pt-filter></pt-filter>
+</section>
+<div class="periodic-table" (click)="toggleBohrModal()">
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <pt-element [elementData]="getElement(1)" id="element_1" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <!--[elementData] binds child component's elementData property to the getElement fxn in periodic-table component-->
+        <!--(elementHovered) listens for output from hover event in child component, triggers hoverReceived()-->
+        <div class="element blank"></div>
+        <div class="hover-view">
+            <!--info box-->
+            <div id="flex-container">
+                <div id="topPortion"><p id = "placeholder">Welcome to Atom Superstratum!</p>
+                    <span id="atomicMass" *ngIf="element && element.atomicMass">Atomic Mass: {{ element.atomicMass }} </span>
+                </div>
+
+                <div id="bottomPortion">
+                    <div id = "elementInfo">
+                        <div><p id = "welcome">Hello fellow Chemist! <br> HOVER for detailed information. <br> CLICK for the Bohr Model.<br> EXPLORE Away!</p>
+                            <div  *ngIf="element && element.eletronicConfiguration">Electronic Configuration: {{ element.electronicConfiguration }} </div>
+                            <div  *ngIf="element && element.electronegativity">Electronegativity: {{ element.electronegativity }} </div>
+                            <div  *ngIf="element && element.oxidationStates">Oxidation States: {{ element.oxidationStates }} </div>
+                            <div  *ngIf="element && element.meltingPoint">Melting/Boiling Point: {{ element.meltingPoint }} | {{ element.boilingPoint }} </div>
+                            <div  *ngIf="element && element.yearDiscovered">Year Discovered: {{ element.yearDiscovered }} </div>
+                        </div>
+                    </div>
+                    <div id="element" *ngIf="element">
+                        <div id="atomicNumber">{{ element.atomicNumber }}</div>
+                        <div id="symbol">{{ element.symbol }}</div>
+                    </div>    
+                </div>
+                
+            </div>
+        </div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <pt-element [elementData]="getElement(2)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+
+    <!--row 2-->
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <pt-element [elementData]="getElement(3)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(4)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <pt-element [elementData]="getElement(5)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(6)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(7)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(8)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(9)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(10)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+
+    <!--row 3-->
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <pt-element [elementData]="getElement(11)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(12)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <!--<div class="hover-view"></div>-->
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <pt-element [elementData]="getElement(13)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(14)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(15)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(16)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(17)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(18)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+
+    <!--row 4-->
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <pt-element [elementData]="getElement(19)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(20)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(21)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(22)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(23)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(24)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(25)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(26)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(27)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(28)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(29)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(30)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(31)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(32)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(33)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(34)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(35)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(36)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+
+    <!--row 5-->
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <pt-element [elementData]="getElement(37)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(38)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(39)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(40)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(41)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(42)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(43)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(44)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(45)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(46)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(47)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(48)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(49)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(50)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(51)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(52)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(53)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(54)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+
+    <!--row 6-->
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <pt-element [elementData]="getElement(55)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(56)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <div class="element blank"></div>
+        <pt-element [elementData]="getElement(72)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(73)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(74)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(75)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(76)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(77)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(78)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(79)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(80)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(81)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(82)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(83)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(84)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(85)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(86)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+
+    <!--row 7-->
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <pt-element [elementData]="getElement(87)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(88)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <div class="element blank"></div>
+        <pt-element [elementData]="getElement(104)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(105)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(106)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(107)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(108)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(109)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(110)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(111)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(112)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(113)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(114)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(115)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(116)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(117)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(118)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+
+    <!--row 8 -->
+    <div style="margin-bottom: 2em;">
+    </div>
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <pt-element [elementData]="getElement(57)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(58)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(59)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(60)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(61)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(62)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(63)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(64)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(65)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(66)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(67)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(68)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(69)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(70)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(71)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+
+    <!-- row9-->
+    <div [style.height.px]='elementHeight' class="row clearfix">
+        <div class="element blank"></div>
+        <div class="element blank"></div>
+        <pt-element [elementData]="getElement(89)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(90)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(91)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(92)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(93)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(94)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(95)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(96)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(97)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(98)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(99)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(100)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(101)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(102)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+        <pt-element [elementData]="getElement(103)" class="element" (elementHovered)="hoverReceived($event)"></pt-element>
+    </div>
+</div>
+</section>

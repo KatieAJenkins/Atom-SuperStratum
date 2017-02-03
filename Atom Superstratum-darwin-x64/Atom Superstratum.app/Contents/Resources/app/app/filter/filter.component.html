@@ -1,0 +1,30 @@
+<div class="filter-box">
+  <div class="group-box">
+    <div class="filters">
+      <div *ngFor="let name of nonMetalNames">
+        <pt-button (click)="addGroupBlock(name)" [name]="name" [filterGroupBlocks]="filter.groupBlock" [filterState]="filter.standardState"></pt-button>
+      </div>
+    </div>
+
+    <div class="filters">
+      <div *ngFor="let name of metalNames">
+        <pt-button (click)="addGroupBlock(name)" [name]="name" [filterGroupBlocks]="filter.groupBlock" [filterState]="filter.standardState"></pt-button>
+      </div>
+    </div>
+
+    <div class="filters">
+      <pt-button (click)="addGroupBlock('metalloid')" [name]="metalloid" [filterGroupBlocks]="filter.groupBlock" [filterState]="filter.standardState"></pt-button>
+    </div>
+
+    <div class="filters">
+      <h3>State</h3>
+      <div *ngFor="let name of stateNames">
+        <pt-button (click)="addStandardState(name)" [name]="name" [filterGroupBlocks]="filter.groupBlock" [filterState]="filter.standardState"></pt-button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--<div class="clear-box">
+    <button class="clearButton" (click)="clearFilter()">Clear</button>
+  </div>-->
+</div>
