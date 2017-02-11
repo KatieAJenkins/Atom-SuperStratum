@@ -1,6 +1,6 @@
 # Atom Superstratum
 
-Interactive Periodic Table with a clean user experience, detailed information, togglable filters, and animationed Bohr Models.
+Interactive Periodic Table with a clean user experience, detailed information, togglable filters, and animated Bohr Models.
 
 ![sounds](readme/atom_superstratum_homepage.png)
 
