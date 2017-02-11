@@ -1,23 +1,13 @@
-# interactive-periodic-table
-q3 project
+# Atom Superstratum
 
-GitHub setup:
-* echo node_modules >> .gitignore
-* echo .DS_Store > .gitignore
+Interactive Periodic Table with a clean user experience, detailed information, togglable filters, and animationed Bohr Models.
 
-Pull Request Process:
-* git checkout -b initials_branch_name
-* Make changes to code
-* Add and commit
-* git pull origin master into your branch
-  * merge conflicts?
-    * Slack team that there is a merge conflict
-    * fix merge conflicts in Atom
-    * close file in Atom
-    * commit merge conflict fixes
-* if no merge conflicts, git push origin branch_name
-* Submit a Pull Request in GitHub to merge to master
-* Slack Team that you merged your branch with master
-* Team will git pull origin master on local drive
+![sounds](readme/atom_superstratum_homepage.png)
 
-**Check Waffle.io for who is working on what files!**
+![sounds](readme/atom_superstratum_filter.png)
+
+Click on the Element to learn more and see its Bohr Model!
+
+![sounds](readme/atom_superstratum_bohr.png)
+
+Thanks to this fellow team of mad scientists and web developers for creating this with me: [Justyna Foster](https://github.com/SoleNero), [Kyle Joyce](https://github.com/joyceky/), [Aidan Baack](https://github.com/aebaack), [Kevin Cowley](https://github.com/cowleyk), [Thomas Sarkinson](https://github.com/thcmm).
